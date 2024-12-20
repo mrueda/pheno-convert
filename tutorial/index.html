@@ -1,0 +1,1670 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Convert-Pheno Toolkit Documentation">
+      
+      
+        <meta name="author" content="Manuel Rueda, PhD">
+      
+      
+      
+        <link rel="prev" href="../bff2pxf/">
+      
+      
+        <link rel="next" href="../usage/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Tutorial - Convert-Pheno Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/theme_overrides.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-convert" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Convert-Pheno Documentation" class="md-header__button md-logo" aria-label="Convert-Pheno Documentation" data-md-component="logo">
+      
+  <img src="../img/CP-logo-grey.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Convert-Pheno Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mrueda/convert-pheno" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Convert-Pheno
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Convert-Pheno Documentation" class="md-nav__button md-logo" aria-label="Convert-Pheno Documentation" data-md-component="logo">
+      
+  <img src="../img/CP-logo-grey.png" alt="logo">
+
+    </a>
+    Convert-Pheno Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mrueda/convert-pheno" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Convert-Pheno
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-is-convert-pheno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Convert-Pheno?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supported-formats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supported formats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download-and-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download & Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Use
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Use
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-as-a-command-line-interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    As a command-line interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-as-a-module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    As a module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-as-an-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    As an API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://cnag-biomedical-informatics.github.io/convert-pheno-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web App User interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Formats accepted
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Formats accepted
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beacon v2 Models (BFF)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pxf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phenopacket v2 (PXF)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redcap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    REDCap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../omop-cdm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OMOP-CDM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cdisc-odm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CDISC-ODM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CSV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Technical details
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Technical details
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapping-steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mapping steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mapping tables
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mapping tables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../omop2bff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OMOP to BFF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pxf2bff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PXF to BFF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bff2pxf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFF to PXF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Help
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Help
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-convert" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to convert:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-mapping-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a mapping file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-convert-pheno" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Convert-Pheno
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-convert-pheno_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Convert-Pheno
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-mapping-file_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a mapping file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-convert-pheno_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Convert-Pheno
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://colab.research.google.com/drive/1T6F3bLwfZyiYKD6fl1CIxs9vG068RHQ6" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google colab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../future-plans/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Future plans
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../citation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Citation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Tutorial</h1>
+
+<details class="tip">
+<summary>Google Colab version</summary>
+<p>We created a <a href="https://colab.research.google.com/drive/1T6F3bLwfZyiYKD6fl1CIxs9vG068RHQ6">Google Colab version</a> of the tutorial. Users can view notebooks shared publicly without sign-in, but you need a google account to execute code.</p>
+<p><a target="_blank" href="https://colab.research.google.com/drive/1T6F3bLwfZyiYKD6fl1CIxs9vG068RHQ6">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a></p>
+<p>We also have a local copy of the notebook that can be downloaded from the <a href="https://github.com/CNAG-Biomedical-Informatics/convert-pheno/blob/main/nb/convert_pheno_cli_tutorial.ipynb">repo</a>. </p>
+</details>
+<p>This page provides brief tutorials on how to perform data conversion by using <code>Convert-Pheno</code><strong>command-line interface</strong>.</p>
+<details class="info">
+<summary>Note on installation</summary>
+<p>Before proceeding, ensure that the software is properly installed. In the following instructions, it will be assumed that you have downloaded and installed <a href="../download-and-installation/">Convert-Pheno</a>.</p>
+</details>
+<h3 id="how-to-convert">How to convert:<a class="headerlink" href="#how-to-convert" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">REDCap to Phenopackets v2</label><label for="__tabbed_1_2">OMOP CDM to Beacon v2 Models</label><label for="__tabbed_1_3">CSV to Beacon v2 Models</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>This section provides a summary of the steps to convert a REDCap project to Phenopackets v2. </p>
+<ul>
+<li>The starting point is to log in to your REDCap system and export the data to CSV / Microsoft Excel (raw data) format. If you need more information on REDCap, we recommend consulting the comprehensive <a href="https://confluence.research.cchmc.org/display/CCTSTRED/Cincinnati+REDCap+Resource+Center">documentation</a> provided by the Cincinnati Children's Hospital Medical Center.</li>
+</ul>
+<details class="question">
+<summary>Can I export CSV / Microsoft Excel (labels) file?</summary>
+<p>Yes, you can export a CSV or Microsoft Excel file with labels. However, you need to use the <code>--icsv</code> flag instead of the <code>--iredcap</code> flag as the input format. While we recommend exporting raw data along with the dictionary for better accuracy, we understand that this might not always be possible.</p>
+<p>For more detailed information and other common questions, please refer to the <a href="../faq/#general">FAQ</a>.</p>
+</details>
+<ul>
+<li>
+<p>After exporting the data, you must also download the REDCap dictionary in CSV format. This can be done within REDCap by navigating to <code>Project Setup/Data Dictionary/Download the current</code>.</p>
+</li>
+<li>
+<p>Since REDCap projects are "free-format," a mapping file is necessary to connect REDCap project variables (i.e. fields) to something meaningful for <code>Convert-Pheno</code>. This mapping file will be used in the conversion process.</p>
+</li>
+</ul>
+<details class="question" open="open">
+<summary>What is a <code>Convert-Pheno</code> mapping file?</summary>
+<p>A mapping file is a text file in <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> format (<a href="https://en.wikipedia.org/wiki/JSON">JSON</a> is also accepted) that connects a set of variables to a format that is understood by <code>Convert-Pheno</code>. This file maps your variables to the required <strong>terms</strong> of the <a href="https://docs.genomebeacons.org/schemas-md/individuals_defaultSchema">individuals</a> entity from the Beacon v2 models, which serves a center model.</p>
+<h3 id="creating-a-mapping-file">Creating a mapping file<a class="headerlink" href="#creating-a-mapping-file" title="Permanent link">&para;</a></h3>
+<p>To create a mapping file, start by reviewing the <a href="https://github.com/cnag-biomedical-informatics/convert-pheno/blob/main/t/redcap2bff/in/redcap_mapping.yaml">example mapping file</a> provided with the installation. The goal is to replace the contents of such file with those from your REDCap project. The mapping file contains the following types of data:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Required (Optional)</th>
+<th>Required properties</th>
+<th>Optional properties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internal</td>
+<td><code>project</code></td>
+<td><code>id, source, ontology, version</code></td>
+<td><code>description, baselineFieldsToPropagate</code></td>
+</tr>
+<tr>
+<td>Beacon v2 terms</td>
+<td><code>id, sex (diseases, exposures, info, interventionsOrProcedures, measures, phenotypicFeatures, treatments)</code></td>
+<td><code>fields</code></td>
+<td><code>age,ageOfOnset,assignTermIdFromHeader,bodySite,dateOfProcedure,dictionary,drugDose,drugUnit,duration,durationUnit,familyHistory,fields,mapping,procedureCodeLabel,selector,terminology,unit</code></td>
+</tr>
+</tbody>
+</table>
+<p>These are the properties needed to map your data to the entity <code>individuals</code> in the Beacon v2 Models:</p>
+<ul>
+<li><strong>baselineFieldsToPropagate</strong>, an array of columns containing measurements that were taken only at the initial time point (time = 0). Use this if you wish to duplicate these columns across subsequent rows for the same patient ID. It is important to ensure that the row containing baseline information appears first in the CSV.</li>
+<li><strong>age</strong>, a <code>string</code> representing the column that points to the age of the patient.</li>
+<li><strong>ageOfOnset</strong>, an <code>object</code> representing the column that points to the age at which the patient first experienced symptoms or was diagnosed with a condition.</li>
+<li><strong>assignTermIdFromHeader</strong>, an <code>array</code> for columns on which the ontology-term ids have to be assigned from the header.</li>
+<li><strong>bodySite</strong>, an <code>object</code> representing the column that points to the part of the body affected by a condition or where a procedure was performed.</li>
+<li><strong>dateOfProcedure</strong>, an <code>object</code> representing the column that points to when a procedure took place.</li>
+<li><strong>dictionary</strong>, is an <code>object</code> in the form of <code>key: value</code>. The <code>key</code> represents the original variable name in REDCap and the <code>value</code> represents the "phrase" that will be used to query a database to find an ontology candidate. For instance, you may have a variable named <code>cigarettes_days</code>, but you know that in <a href="https://www.ebi.ac.uk/ols/ontologies/ncit">NCIt</a> the label is <code>Average Number Cigarettes Smoked a Day</code>. In this case, you will use <code>cigarettes_days: Average Number Cigarettes Smoked a Day</code>.</li>
+<li><strong>drugDose</strong>, an <code>object</code> representing the column that points to the dose column for each treatment.</li>
+<li><strong>drugUnit</strong>, an <code>object</code> representing the column that points to the unit column for each treatment.</li>
+<li><strong>duration</strong>, an <code>object</code> representing the column that points to the duration column for each treatment.</li>
+<li><strong>durationUnit</strong>, an <code>object</code> representing the column that points to the duration unit column for each treatment.</li>
+<li><strong>familyHistory</strong>, an <code>object</code> representing the column that points to the family medical history relevant to the patient's condition.</li>
+<li><strong>fields</strong>, can be either a <code>string</code> or an <code>array</code> consisting of the name of the REDCap variables that map to that Beacon v2 term.</li>
+<li><strong>mapping</strong>, is an <code>object</code> in the form of <code>key: value</code> that we use to map our Beacon v2 objects to REDCap variables.</li>
+<li><strong>procedureCodeLabel</strong> , a nested <code>object</code> with specific mappings for <code>interventionsOrProcedures</code>.</li>
+<li><strong>ontology</strong>, it's an <code>string</code> to define more granularly the ontology for this particular Beacon v2 term. If not present, the script will use that from <code>project.ontology</code>.</li>
+<li><strong>routeOfAdministration</strong>, a nested <code>object</code> with specific mappings for <code>treatments</code>.</li>
+<li><strong>selector</strong>, a nested <code>object</code> value with specific mappings.</li>
+<li><strong>terminology</strong>, a nested <code>object</code> value with user-defined ontology terms.</li>
+</ul>
+<details class="example">
+<summary>Terminology example</summary>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">terminology</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">My fav term</span><span class="p">:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FOO:12345678</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Label for my fav term</span>
+</span></code></pre></div>
+</details>
+<ul>
+<li><strong>unit</strong>, an <code>object</code> representing the column that points to the unit of measurement for a given value or treatment.</li>
+</ul>
+<details class="tip">
+<summary>Defining the values in the property <code>dictionary</code></summary>
+<p>Before assigning values to <code>dictionary</code> it's important that you think about which ontologies/terminologies you want to use. The field <code>project.ontology</code> defines the ontology for the whole project, but you can also specify a another antology at the Beacon v2 term level. Once you know which ontologies to use, then try searching for such term to get an accorate label for it. For example, if you have chosen <code>ncit</code>, you can search for the values within NCIt at <a href="https://www.ebi.ac.uk/ols/ontologies/ncit">EBI Search</a>. <code>Convert-Pheno</code> will use these values to retrieve the actual ontology term from its internal databases.</p>
+</details>
+<details class="abstract">
+<summary>About text similarity in database searches</summary>
+<p><code>Convert-Pheno</code> comes with a few pre-configured databases and it will search for ontologies/terminologies there. Two two types of searches can be performed:</p>
+<ol>
+<li>
+<p><code>exact</code> (default)</p>
+<p>Retrieves only exact matches for a specified 'label'.</p>
+</li>
+<li>
+<p><code>mixed</code> (needs <code>--search mixed</code>)</p>
+<p>The script will begin by attempting an exact match for 'label', and if it is unsuccessful, it will then conduct a search based on string (phrase) similarity and select the ontology term with the highest score. </p>
+</li>
+</ol>
+<p>Example (NCIt ontology): </p>
+<p>Search phrase: <strong>Exercise pain management</strong> with <code>exact</code> search.</p>
+<ul>
+<li>exact match: Exercise Pain Management</li>
+</ul>
+<p>Search phrase: <strong>Brain Hemorrhage</strong> with <code>mixed</code> search.</p>
+<ul>
+<li>
+<p>exact match: NA</p>
+</li>
+<li>
+<p>similarity match: Intraventricular Brain Hemorrhage</p>
+</li>
+</ul>
+<p><code>--min-text-similarity-score</code> sets the minimum value for the Cosine / Sorensen-Dice coefficient. The default value (0.8) is very conservative.</p>
+<p>Note that <code>mixed</code> search requires more computational time and its results can be unpredictable. Please use it with caution.</p>
+<p><strong>Example:</strong> </p>
+<p>Find below an example of the resulfs for the query <code>Sudden Death Syndrome</code> on the local <a href="https://ncithesaurus.nci.nih.gov/ncitbrowser">NCIt</a> database.</p>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Search method</th>
+<th>NCIt match (label)</th>
+<th>NCIt code (id)</th>
+<th>Cosine</th>
+<th>Dice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sudden Death Syndrome</td>
+<td><code>exact</code></td>
+<td><code>NA</code></td>
+<td><code>NA</code></td>
+<td><code>NA</code></td>
+<td><code>NA</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>mixed</code></td>
+<td>CDISC SDTM Sudden Death Syndrome Type Terminology</td>
+<td>NCIT:C101852</td>
+<td>0.65</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Family History of Sudden Arrythmia Death Syndrome</td>
+<td>NCIT:C168019</td>
+<td>0.65</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Family History of Sudden Infant Death Syndrome</td>
+<td>NCIT:C168209</td>
+<td>0.65</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Sudden Infant Death Syndrome</td>
+<td>NCIT:C85173</td>
+<td>0.86</td>
+<td>0.86</td>
+</tr>
+</tbody>
+</table>
+<p>Here, utilizing the default <code>--search</code> method (<code>exact</code>) will yield no matches. However, by employing <code>--search mixed</code>, we would identify <code>Sudden Infant Death Syndrome</code> as it registers the highest <code>cosine</code> score. If we had configured the <code>--min-text-similarity-score</code> to 0.9, we would not have found any matches.</p>
+</details>
+</details>
+<h3 id="running-convert-pheno">Running <code>Convert-Pheno</code><a class="headerlink" href="#running-convert-pheno" title="Permanent link">&para;</a></h3>
+<p>Now you can proceed to run <code>convert-pheno</code> with the <strong>command-line interface</strong>. Please see how <a href="../csv/#csv-as-input">here</a>.</p>
+</div>
+<div class="tabbed-block">
+<p>This section provides a summary of the steps to convert an OMOP CDM export to Beacon v2 Models. The starting point is either a PostgreSQL export in the form of <code>.sql</code> or <code>.csv</code> files. The process is the same for both.</p>
+<p>Two possibilities may arise:</p>
+<ol>
+<li><strong>Full</strong> export of records.</li>
+<li><strong>Partial</strong> export of records.</li>
+</ol>
+<h4 id="full-export">Full export<a class="headerlink" href="#full-export" title="Permanent link">&para;</a></h4>
+<p>In a full export, all standardized terms are included in the <code>CONCEPT</code> table, thus Convert-Pheno does not need to search any additional databases for terminology (with a few exceptions). </p>
+<h4 id="partial-export">Partial export<a class="headerlink" href="#partial-export" title="Permanent link">&para;</a></h4>
+<p>In a partial export, many standardized terms may be missing from the <code>CONCEPT</code> table, as a result, <code>Convert-Pheno</code> will perform a search on the included <strong>ATHENA-OHDSI</strong> database. To enable this search you should use the flag <code>--ohdsi-db</code>.</p>
+<h3 id="running-convert-pheno_1">Running <code>Convert-Pheno</code><a class="headerlink" href="#running-convert-pheno_1" title="Permanent link">&para;</a></h3>
+<p>Now you can proceed to run <code>convert-pheno</code> with the <strong>command-line interface</strong>. Please see how <a href="../omop-cdm/#omop-as-input">here</a>.</p>
+</div>
+<div class="tabbed-block">
+<p>This section provides a summary of the steps to convert a CSV file with raw clinical data to Phenopackets v2.</p>
+<ul>
+<li>Since CSV files  are "free-format," a mapping file is necessary to connect variables (i.e. fields) to something meaningful for <code>Convert-Pheno</code>. This mapping file will be used in the conversion process.</li>
+</ul>
+<details class="question" open="open">
+<summary>What is a <code>Convert-Pheno</code> mapping file?</summary>
+<p>A mapping file is a text file in <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> format (<a href="https://en.wikipedia.org/wiki/JSON">JSON</a> is also accepted) that connects a set of variables to a format that is understood by <code>Convert-Pheno</code>. This file maps your variables to the required <strong>terms</strong> of the <a href="https://docs.genomebeacons.org/schemas-md/individuals_defaultSchema">individuals</a> entity from the Beacon v2 models, which serves a center model.</p>
+<h3 id="creating-a-mapping-file_1">Creating a mapping file<a class="headerlink" href="#creating-a-mapping-file_1" title="Permanent link">&para;</a></h3>
+<p>To create a mapping file, start by reviewing the <a href="https://github.com/cnag-biomedical-informatics/convert-pheno/blob/main/t/redcap2bff/in/redcap_mapping.yaml">example mapping file</a> provided with the installation. The goal is to replace the contents of such file with those from your REDCap project. The mapping file contains the following types of data:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Required (Optional)</th>
+<th>Required properties</th>
+<th>Optional properties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internal</td>
+<td><code>project</code></td>
+<td><code>id, source, ontology, version</code></td>
+<td><code>description, baselineFieldsToPropagate</code></td>
+</tr>
+<tr>
+<td>Beacon v2 terms</td>
+<td><code>id, sex (diseases, exposures, info, interventionsOrProcedures, measures, phenotypicFeatures, treatments)</code></td>
+<td><code>fields</code></td>
+<td><code>age,ageOfOnset,assignTermIdFromHeader,bodySite,dateOfProcedure,dictionary,drugDose,drugUnit,duration,durationUnit,familyHistory,fields,mapping,procedureCodeLabel,selector,terminology,unit</code></td>
+</tr>
+</tbody>
+</table>
+<p>These are the properties needed to map your data to the entity <code>individuals</code> in the Beacon v2 Models:</p>
+<ul>
+<li><strong>baselineFieldsToPropagate</strong>, an array of columns containing measurements that were taken only at the initial time point (time = 0). Use this if you wish to duplicate these columns across subsequent rows for the same patient ID. It is important to ensure that the row containing baseline information appears first in the CSV.</li>
+<li><strong>age</strong>, a <code>string</code> representing the column that points to the age of the patient.</li>
+<li><strong>ageOfOnset</strong>, an <code>object</code> representing the column that points to the age at which the patient first experienced symptoms or was diagnosed with a condition.</li>
+<li><strong>assignTermIdFromHeader</strong>, an <code>array</code> for columns on which the ontology-term ids have to be assigned from the header.</li>
+<li><strong>bodySite</strong>, an <code>object</code> representing the column that points to the part of the body affected by a condition or where a procedure was performed.</li>
+<li><strong>dateOfProcedure</strong>, an <code>object</code> representing the column that points to when a procedure took place.</li>
+<li><strong>dictionary</strong>, is an <code>object</code> in the form of <code>key: value</code>. The <code>key</code> represents the original variable name in REDCap and the <code>value</code> represents the "phrase" that will be used to query a database to find an ontology candidate. For instance, you may have a variable named <code>cigarettes_days</code>, but you know that in <a href="https://www.ebi.ac.uk/ols/ontologies/ncit">NCIt</a> the label is <code>Average Number Cigarettes Smoked a Day</code>. In this case, you will use <code>cigarettes_days: Average Number Cigarettes Smoked a Day</code>.</li>
+<li><strong>drugDose</strong>, an <code>object</code> representing the column that points to the dose column for each treatment.</li>
+<li><strong>drugUnit</strong>, an <code>object</code> representing the column that points to the unit column for each treatment.</li>
+<li><strong>duration</strong>, an <code>object</code> representing the column that points to the duration column for each treatment.</li>
+<li><strong>durationUnit</strong>, an <code>object</code> representing the column that points to the duration unit column for each treatment.</li>
+<li><strong>familyHistory</strong>, an <code>object</code> representing the column that points to the family medical history relevant to the patient's condition.</li>
+<li><strong>fields</strong>, can be either a <code>string</code> or an <code>array</code> consisting of the name of the REDCap variables that map to that Beacon v2 term.</li>
+<li><strong>mapping</strong>, is an <code>object</code> in the form of <code>key: value</code> that we use to map our Beacon v2 objects to REDCap variables.</li>
+<li><strong>procedureCodeLabel</strong> , a nested <code>object</code> with specific mappings for <code>interventionsOrProcedures</code>.</li>
+<li><strong>ontology</strong>, it's an <code>string</code> to define more granularly the ontology for this particular Beacon v2 term. If not present, the script will use that from <code>project.ontology</code>.</li>
+<li><strong>routeOfAdministration</strong>, a nested <code>object</code> with specific mappings for <code>treatments</code>.</li>
+<li><strong>selector</strong>, a nested <code>object</code> value with specific mappings.</li>
+<li><strong>terminology</strong>, a nested <code>object</code> value with user-defined ontology terms.</li>
+</ul>
+<details class="example">
+<summary>Terminology example</summary>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">terminology</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">My fav term</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FOO:12345678</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Label for my fav term</span>
+</span></code></pre></div>
+</details>
+<ul>
+<li><strong>unit</strong>, an <code>object</code> representing the column that points to the unit of measurement for a given value or treatment.</li>
+</ul>
+<details class="tip">
+<summary>Defining the values in the property <code>dictionary</code></summary>
+<p>Before assigning values to <code>dictionary</code> it's important that you think about which ontologies/terminologies you want to use. The field <code>project.ontology</code> defines the ontology for the whole project, but you can also specify a another antology at the Beacon v2 term level. Once you know which ontologies to use, then try searching for such term to get an accorate label for it. For example, if you have chosen <code>ncit</code>, you can search for the values within NCIt at <a href="https://www.ebi.ac.uk/ols/ontologies/ncit">EBI Search</a>. <code>Convert-Pheno</code> will use these values to retrieve the actual ontology term from its internal databases.</p>
+</details>
+<details class="abstract">
+<summary>About text similarity in database searches</summary>
+<p><code>Convert-Pheno</code> comes with a few pre-configured databases and it will search for ontologies/terminologies there. Two two types of searches can be performed:</p>
+<ol>
+<li>
+<p><code>exact</code> (default)</p>
+<p>Retrieves only exact matches for a specified 'label'.</p>
+</li>
+<li>
+<p><code>mixed</code> (needs <code>--search mixed</code>)</p>
+<p>The script will begin by attempting an exact match for 'label', and if it is unsuccessful, it will then conduct a search based on string (phrase) similarity and select the ontology term with the highest score. </p>
+</li>
+</ol>
+<p>Example (NCIt ontology): </p>
+<p>Search phrase: <strong>Exercise pain management</strong> with <code>exact</code> search.</p>
+<ul>
+<li>exact match: Exercise Pain Management</li>
+</ul>
+<p>Search phrase: <strong>Brain Hemorrhage</strong> with <code>mixed</code> search.</p>
+<ul>
+<li>
+<p>exact match: NA</p>
+</li>
+<li>
+<p>similarity match: Intraventricular Brain Hemorrhage</p>
+</li>
+</ul>
+<p><code>--min-text-similarity-score</code> sets the minimum value for the Cosine / Sorensen-Dice coefficient. The default value (0.8) is very conservative.</p>
+<p>Note that <code>mixed</code> search requires more computational time and its results can be unpredictable. Please use it with caution.</p>
+<p><strong>Example:</strong> </p>
+<p>Find below an example of the resulfs for the query <code>Sudden Death Syndrome</code> on the local <a href="https://ncithesaurus.nci.nih.gov/ncitbrowser">NCIt</a> database.</p>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Search method</th>
+<th>NCIt match (label)</th>
+<th>NCIt code (id)</th>
+<th>Cosine</th>
+<th>Dice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sudden Death Syndrome</td>
+<td><code>exact</code></td>
+<td><code>NA</code></td>
+<td><code>NA</code></td>
+<td><code>NA</code></td>
+<td><code>NA</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>mixed</code></td>
+<td>CDISC SDTM Sudden Death Syndrome Type Terminology</td>
+<td>NCIT:C101852</td>
+<td>0.65</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Family History of Sudden Arrythmia Death Syndrome</td>
+<td>NCIT:C168019</td>
+<td>0.65</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Family History of Sudden Infant Death Syndrome</td>
+<td>NCIT:C168209</td>
+<td>0.65</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Sudden Infant Death Syndrome</td>
+<td>NCIT:C85173</td>
+<td>0.86</td>
+<td>0.86</td>
+</tr>
+</tbody>
+</table>
+<p>Here, utilizing the default <code>--search</code> method (<code>exact</code>) will yield no matches. However, by employing <code>--search mixed</code>, we would identify <code>Sudden Infant Death Syndrome</code> as it registers the highest <code>cosine</code> score. If we had configured the <code>--min-text-similarity-score</code> to 0.9, we would not have found any matches.</p>
+</details>
+</details>
+<h3 id="running-convert-pheno_2">Running <code>Convert-Pheno</code><a class="headerlink" href="#running-convert-pheno_2" title="Permanent link">&para;</a></h3>
+<p>Now you can proceed to run <code>convert-pheno</code> with the <strong>command-line interface</strong>. Please see how <a href="../csv/#csv-with-clinical-data-as-input">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="admonition question">
+<p class="admonition-title">More questions?</p>
+<p>Please take a look to our <a href="../faq/">Frequently Asked Questions</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; Copyright 2022-2025, Manuel Rueda, CNAG
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/mrueda" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.select", "content.code.copy", "content.tabs.link", "search.highlight", "search.share", "navigation.tracking", "navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../js/theme_overrides.js"></script>
+      
+    
+  </body>
+</html>

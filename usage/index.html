@@ -1,0 +1,1634 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Convert-Pheno Toolkit Documentation">
+      
+      
+        <meta name="author" content="Manuel Rueda, PhD">
+      
+      
+      
+        <link rel="prev" href="../tutorial/">
+      
+      
+        <link rel="next" href="../faq/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Usage - Convert-Pheno Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/theme_overrides.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#non-containerized" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Convert-Pheno Documentation" class="md-header__button md-logo" aria-label="Convert-Pheno Documentation" data-md-component="logo">
+      
+  <img src="../img/CP-logo-grey.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Convert-Pheno Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mrueda/convert-pheno" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Convert-Pheno
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Convert-Pheno Documentation" class="md-nav__button md-logo" aria-label="Convert-Pheno Documentation" data-md-component="logo">
+      
+  <img src="../img/CP-logo-grey.png" alt="logo">
+
+    </a>
+    Convert-Pheno Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mrueda/convert-pheno" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Convert-Pheno
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-is-convert-pheno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Convert-Pheno?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supported-formats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supported formats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download-and-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download & Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Use
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Use
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-as-a-command-line-interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    As a command-line interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-as-a-module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    As a module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-as-an-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    As an API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://cnag-biomedical-informatics.github.io/convert-pheno-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web App User interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Formats accepted
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Formats accepted
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beacon v2 Models (BFF)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pxf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phenopacket v2 (PXF)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redcap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    REDCap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../omop-cdm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OMOP-CDM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cdisc-odm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CDISC-ODM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CSV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Technical details
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Technical details
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapping-steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mapping steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mapping tables
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mapping tables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../omop2bff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OMOP to BFF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pxf2bff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PXF to BFF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bff2pxf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFF to PXF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Help
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Help
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://colab.research.google.com/drive/1T6F3bLwfZyiYKD6fl1CIxs9vG068RHQ6" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google colab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#non-containerized" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non containerized
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Non containerized">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-from-cpan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: From CPAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-from-cpan-in-a-conda-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: From CPAN in a Conda environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-from-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 3: From Github
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containerized" class="md-nav__link">
+    <span class="md-ellipsis">
+      Containerized
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Containerized">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-4-from-docker-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 4: From Docker Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-5-with-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 5: With Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-instructions-for-methods-4-and-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional instructions for Methods 4 and 5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounting-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mounting volumes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      System requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-errors-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      COMMON ERRORS AND SOLUTIONS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../future-plans/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Future plans
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../citation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Citation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p align="left">
+  <a href="https://github.com/cnag-biomedical-informatics/convert-pheno"><img src="https://raw.githubusercontent.com/cnag-biomedical-informatics/convert-pheno/main/docs/img/CP-logo.png" width="220" alt="Convert-Pheno"></a>
+  <a href="https://github.com/cnag-biomedical-informatics/convert-pheno"><img src="https://raw.githubusercontent.com/cnag-biomedical-informatics/convert-pheno/main/docs/img/CP-text.png" width="500" alt="Convert-Pheno"></a>
+</p>
+<p align="center">
+    <em>A software toolkit for the interconversion of standard data models for phenotypic data</em>
+</p>
+
+<p><a href="https://github.com/cnag-biomedical-informatics/convert-pheno/actions/workflows/build-and-test.yml"><img alt="Build and Test" src="https://github.com/cnag-biomedical-informatics/convert-pheno/actions/workflows/build-and-test.yml/badge.svg" /></a>
+<a href="https://coveralls.io/github/CNAG-Biomedical-Informatics/convert-pheno?branch=main"><img alt="Coverage Status" src="https://coveralls.io/repos/github/CNAG-Biomedical-Informatics/convert-pheno/badge.svg?branch=main" /></a>
+<a href="https://github.com/cnag-biomedical-informatics/convert-pheno/actions/workflows/cpan-publish.yml"><img alt="CPAN Publish" src="https://github.com/cnag-biomedical-informatics/convert-pheno/actions/workflows/cpan-publish.yml/badge.svg" /></a>
+<a href="https://cpants.cpanauthors.org/dist/Convert-Pheno"><img alt="Kwalitee Score" src="https://cpants.cpanauthors.org/dist/Convert-Pheno.svg" /></a>
+<img alt="version" src="https://img.shields.io/badge/version-0.26_beta-orange" />
+<a href="https://github.com/cnag-biomedical-informatics/convert-pheno/actions/workflows/docker-build.yml"><img alt="Docker Build" src="https://github.com/cnag-biomedical-informatics/convert-pheno/actions/workflows/docker-build.yml/badge.svg" /></a>
+<a href="https://hub.docker.com/r/manuelrueda/convert-pheno/"><img alt="Docker Pulls" src="https://badgen.net/docker/pulls/manuelrueda/convert-pheno?icon=docker&amp;label=pulls" /></a>
+<a href="https://hub.docker.com/r/manuelrueda/convert-pheno/"><img alt="Docker Image Size" src="https://badgen.net/docker/size/manuelrueda/convert-pheno?icon=docker&amp;label=image%20size" /></a>
+<a href="https://github.com/cnag-biomedical-informatics/convert-pheno/actions/workflows/documentation.yml"><img alt="Documentation Status" src="https://github.com/cnag-biomedical-informatics/convert-pheno/actions/workflows/documentation.yml/badge.svg" /></a>
+<a href="https://opensource.org/licenses/Artistic-2.0"><img alt="License: Artistic-2.0" src="https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg" /></a>
+<a href="https://colab.research.google.com/drive/1T6F3bLwfZyiYKD6fl1CIxs9vG068RHQ6?usp=sharing"><img alt="Google Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<hr />
+<p><strong>Documentation</strong>: <a href="https://cnag-biomedical-informatics.github.io/convert-pheno" target="_blank"><a href="https://cnag-biomedical-informatics.github.io/convert-pheno">cnag-biomedical-informatics.github.io/convert-pheno</a></a></p>
+<p><strong>Google Colab tutorial</strong>: <a href="https://colab.research.google.com/drive/1T6F3bLwfZyiYKD6fl1CIxs9vG068RHQ6?usp=sharing" target="_blank"><a href="https://colab.research.google.com/drive/1T6F3bLwfZyiYKD6fl1CIxs9vG068RHQ6?usp=sharing">colab.research.google.com/drive/1T6F3bLwfZyiYKD6fl1CIxs9vG068RHQ6?usp=sharing</a></a></p>
+<p><strong>CPAN Distribution</strong>: <a href="https://metacpan.org/pod/Convert::Pheno" target="_blank"><a href="https://metacpan.org/pod/Convert::Pheno">metacpan.org/pod/Convert::Pheno</a></a></p>
+<p><strong>Docker Hub Image</strong>: <a href="https://hub.docker.com/r/manuelrueda/convert-pheno/tags" target="_blank"><a href="https://hub.docker.com/r/manuelrueda/convert-pheno/tags">hub.docker.com/r/manuelrueda/convert-pheno/tags</a></a></p>
+<p><strong>Web App UI</strong>: <a href="https://convert-pheno.cnag.cat" target="_blank"><a href="https://convert-pheno.cnag.cat">convert-pheno.cnag.cat</a></a></p>
+<hr />
+<h1 id="table-of-contents">Table of contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#name">Name</a></li>
+<li><a href="#synopsis">Synopsis</a></li>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#non-containerized">Non-Containerized</a></li>
+<li><a href="#containerized">Containerized</a></li>
+<li><a href="#how-to-run-convert-pheno">How to run convert-pheno</a></li>
+<li><a href="#citation">Citation</a></li>
+<li><a href="#author">Author</a></li>
+<li><a href="#copyright-and-license">License</a></li>
+</ul>
+<h1 id="name">NAME<a class="headerlink" href="#name" title="Permanent link">&para;</a></h1>
+<p>convert-pheno - A script to interconvert common data models for phenotypic data</p>
+<h1 id="synopsis">SYNOPSIS<a class="headerlink" href="#synopsis" title="Permanent link">&para;</a></h1>
+<div class="language-text highlight"><pre><span></span><code>convert-pheno [-i input-type] &lt;infile&gt; [-o output-type] &lt;outfile&gt; [-options]
+
+    Arguments:                       
+      (input-type): 
+            -ibff                    Beacon v2 Models (&#39;individuals&#39; JSON|YAML) file
+            -iomop                   OMOP-CDM CSV files or PostgreSQL dump
+            -ipxf                    Phenopacket v2 (JSON|YAML) file
+            -iredcap (experimental)  REDCap (raw data) export CSV file
+            -icdisc  (experimental)  CDISC-ODM v1 XML file
+            -icsv    (experimental)  Raw data CSV
+
+            (Wish-list)
+            #-iopenehr               openEHR
+            #-ifhir                  HL7/FHIR
+
+      (output-type):
+            -obff                    Beacon v2 Models (&#39;individuals&#39; JSON|YAML) file
+            -opxf                    Phenopacket v2 (JSON|YAML) file
+
+            (Wish-list)
+            #-oomop                  OMOP-CDM PostgreSQL dump
+
+            Compatible with -i(bff|pxf):
+            -ocsv                    Flatten data to CSV
+            -ojsonf                  Flatten data to 1D-JSON (or 1D-YAML if suffix is .yml|.yaml)
+            -ojsonld (experimental)  JSON-LD (interoperable w/ RDF ecosystem; YAML-LD if suffix is .ymlld|.yamlld)
+
+    Options:
+      -exposures-file &lt;file&gt;         CSV file with a list of &#39;concept_id&#39; considered to be exposures (with -iomop)
+      -mapping-file &lt;file&gt;           Fields mapping YAML (or JSON) file
+      -max-lines-sql &lt;number&gt;        Maximum lines read per table from SQL dump [500]
+      -min-text-similarity-score &lt;score&gt; Minimum score for cosine similarity (or Sorensen-Dice coefficient) [0.8] (to be used with --search mixed)
+      -ohdsi-db                      Use Athena-OHDSI database (~2.2GB) with -iomop
+      -omop-tables &lt;tables&gt;          OMOP-CDM tables to be processed. Tables &lt;CONCEPT&gt; and &lt;PERSON&gt; are always included.
+      -out-dir &lt;directory&gt;           Output (existing) directory
+      -O                             Overwrite output file
+      -path-to-ohdsi-db &lt;directory&gt;  Directory for the file &lt;ohdsi.db&gt;
+      -phl|print-hidden-labels       Print original values (before DB mapping) of text fields &lt;_labels&gt;
+      -rcd|redcap-dictionary &lt;file&gt;  REDCap data dictionary CSV file
+      -schema-file &lt;file&gt;            Alternative JSON Schema for mapping file
+      -search &lt;type&gt;                 Type of search [&gt;exact|mixed]
+      -svs|self-validate-schema      Perform a self-validation of the JSON schema that defines mapping (requires IO::Socket::SSL)
+      -sep|separator &lt;char&gt;          Delimiter character for CSV files [;] e.g., --sep $&#39;\t&#39;
+      -stream                        Enable incremental processing with -iomop and -obff [&gt;no-stream|stream]
+      -sql2csv                       Print SQL TABLES (only valid with -iomop). Mutually exclusive with --stream
+      -test                          Does not print time-changing-events (useful for file-based cmp)
+      -text-similarity-method &lt;method&gt; The method used to compare values to DB [&gt;cosine|dice]
+      -u|username &lt;username&gt;         Set the username
+
+    Generic Options:
+      -debug &lt;level&gt;                 Print debugging level (from 1 to 5, being 5 max)
+      -help                          Brief help message
+      -log                           Save log file (JSON). If no argument is given then the log is named [convert-pheno-log.json]
+      -man                           Full documentation
+      -no-color                      Don&#39;t print colors to STDOUT [&gt;color|no-color]
+      -v|verbose                     Verbosity on
+      -V|version                     Print Version
+</code></pre></div>
+<h1 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">&para;</a></h1>
+<p><code>convert-pheno</code> is a command-line front-end to the CPAN's module <a href="https://metacpan.org/pod/Convert%3A%3APheno">Convert::Pheno</a>.</p>
+<h1 id="summary">SUMMARY<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h1>
+<p><code>convert-pheno</code> is a command-line front-end to the CPAN's module <a href="https://metacpan.org/pod/Convert%3A%3APheno">Convert::Pheno</a> to interconvert common data models for phenotypic data.</p>
+<h1 id="installation">INSTALLATION<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
+<p>If you plan to only use the CLI, we recommend installing it via CPAN. See details below.</p>
+<h2 id="non-containerized">Non containerized<a class="headerlink" href="#non-containerized" title="Permanent link">&para;</a></h2>
+<p>The script runs on command-line Linux and it has been tested on Debian/RedHat/MacOS based distributions (only showing commands for Debian's). Perl 5 is installed by default on Linux, 
+but we will install a few CPAN modules with <code>cpanminus</code>.</p>
+<h3 id="method-1-from-cpan">Method 1: From CPAN<a class="headerlink" href="#method-1-from-cpan" title="Permanent link">&para;</a></h3>
+<p>First install system level dependencies:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo apt-get install cpanminus libbz2-dev zlib1g-dev libperl-dev libssl-dev
+</code></pre></div>
+<p>Now you have two choose between one of the 3 options below:</p>
+<p><strong>Option 1:</strong> System-level installation:</p>
+<div class="language-text highlight"><pre><span></span><code>cpanm --notest --sudo Convert::Pheno
+convert-pheno -h
+</code></pre></div>
+<p><strong>Option 2:</strong> Install Convert-Pheno and the dependencies at <code>~/perl5</code></p>
+<div class="language-text highlight"><pre><span></span><code>cpanm --local-lib=~/perl5 local::lib &amp;&amp; eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+cpanm --notest Convert::Pheno
+convert-pheno --help
+</code></pre></div>
+<p>To ensure Perl recognizes your local modules every time you start a new terminal, you should type:</p>
+<div class="language-text highlight"><pre><span></span><code>echo &#39;eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)&#39; &gt;&gt; ~/.bashrc
+</code></pre></div>
+<p><strong>Option 3:</strong> Install Convert-Pheno and the dependencies in a "virtual environment" (at <code>local/</code>) . We'll be using the module <code>Carton</code> for that:</p>
+<div class="language-text highlight"><pre><span></span><code>mkdir local
+cpanm --notest --local-lib=local/ Carton
+echo &quot;requires &#39;Convert::Pheno&#39;;&quot; &gt; cpanfile
+export PATH=$PATH:local/bin; export PERL5LIB=$(pwd)/local/lib/perl5:$PERL5LIB
+carton install
+carton exec -- convert-pheno -help
+</code></pre></div>
+<h3 id="method-2-from-cpan-in-a-conda-environment">Method 2: From CPAN in a Conda environment<a class="headerlink" href="#method-2-from-cpan-in-a-conda-environment" title="Permanent link">&para;</a></h3>
+<p>Please follow <a href="https://cnag-biomedical-informatics.github.io/convert-pheno/download-and-installation/#__tabbed_1_2">these instructions</a>.</p>
+<h3 id="method-3-from-github">Method 3: From Github<a class="headerlink" href="#method-3-from-github" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code>git clone https://github.com/cnag-biomedical-informatics/convert-pheno.git
+cd convert-pheno
+</code></pre></div>
+<p>Install system level dependencies:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo apt-get install cpanminus libbz2-dev zlib1g-dev libperl-dev libssl-dev
+</code></pre></div>
+<p>Now you have two choose between one of the 3 options below:</p>
+<p><strong>Option 1:</strong> Install dependencies (they're harmless to your system) as <code>sudo</code>:</p>
+<div class="language-text highlight"><pre><span></span><code>cpanm --notest --sudo --installdeps .
+bin/convert-pheno --help
+</code></pre></div>
+<p><strong>Option 2:</strong> Install the dependencies at <code>~/perl5</code>:</p>
+<div class="language-text highlight"><pre><span></span><code>cpanm --local-lib=~/perl5 local::lib &amp;&amp; eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+cpanm --notest --installdeps .
+bin/convert-pheno --help
+</code></pre></div>
+<p>To ensure Perl recognizes your local modules every time you start a new terminal, you should type:</p>
+<div class="language-text highlight"><pre><span></span><code>echo &#39;eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)&#39; &gt;&gt; ~/.bashrc
+</code></pre></div>
+<p><strong>Option 3:</strong> Install the dependencies in a "virtual environment" (at <code>local/</code>) . We'll be using the module <code>Carton</code> for that:</p>
+<div class="language-text highlight"><pre><span></span><code>mkdir local
+cpanm --notest --local-lib=local/ Carton
+export PATH=$PATH:local/bin; export PERL5LIB=$(pwd)/local/lib/perl5:$PERL5LIB
+carton install
+carton exec -- bin/convert-pheno -help
+</code></pre></div>
+<h2 id="containerized">Containerized<a class="headerlink" href="#containerized" title="Permanent link">&para;</a></h2>
+<h3 id="method-4-from-docker-hub">Method 4: From Docker Hub<a class="headerlink" href="#method-4-from-docker-hub" title="Permanent link">&para;</a></h3>
+<p>Download a docker image (latest version - amd64|x86-64) from <a href="https://hub.docker.com/r/manuelrueda/convert-pheno">Docker Hub</a> by executing:</p>
+<div class="language-text highlight"><pre><span></span><code>docker pull manuelrueda/convert-pheno:latest
+docker image tag manuelrueda/convert-pheno:latest cnag/convert-pheno:latest
+</code></pre></div>
+<p>See additional instructions below.</p>
+<h3 id="method-5-with-dockerfile">Method 5: With Dockerfile<a class="headerlink" href="#method-5-with-dockerfile" title="Permanent link">&para;</a></h3>
+<p>Please download the <code>Dockerfile</code> from the repo:</p>
+<div class="language-text highlight"><pre><span></span><code>wget https://raw.githubusercontent.com/cnag-biomedical-informatics/convert-pheno/main/Dockerfile
+</code></pre></div>
+<p>And then run:</p>
+<div class="language-text highlight"><pre><span></span><code>docker buildx build -t cnag/convert-pheno:latest .
+</code></pre></div>
+<h3 id="additional-instructions-for-methods-4-and-5">Additional instructions for Methods 4 and 5<a class="headerlink" href="#additional-instructions-for-methods-4-and-5" title="Permanent link">&para;</a></h3>
+<p>To run the container (detached) execute:</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -tid -e USERNAME=root --name convert-pheno cnag/convert-pheno:latest
+</code></pre></div>
+<p>To enter:</p>
+<div class="language-text highlight"><pre><span></span><code>docker exec -ti convert-pheno bash
+</code></pre></div>
+<p>The command-line executable can be found at:</p>
+<div class="language-text highlight"><pre><span></span><code>/usr/share/convert-pheno/bin/convert-pheno
+</code></pre></div>
+<p>The default container user is <code>root</code> but you can also run the container as <code>$UID=1000</code> (<code>dockeruser</code>). </p>
+<div class="language-text highlight"><pre><span></span><code> docker run --user 1000 -tid --name convert-pheno cnag/convert-pheno:latest
+</code></pre></div>
+<p>Alternatively, you can use <code>make</code> to perform all the previous steps:</p>
+<div class="language-text highlight"><pre><span></span><code>wget https://raw.githubusercontent.com/cnag-biomedical-informatics/convert-pheno/main/Dockerfile
+wget https://raw.githubusercontent.com/cnag-biomedical-informatics/convert-pheno/main/makefile.docker
+make -f makefile.docker install
+make -f makefile.docker run
+make -f makefile.docker enter
+</code></pre></div>
+<h3 id="mounting-volumes">Mounting volumes<a class="headerlink" href="#mounting-volumes" title="Permanent link">&para;</a></h3>
+<p>Docker containers are fully isolated. If you need the mount a volume to the container please use the following syntax (<code>-v host:container</code>). 
+Find an example below (note that you need to change the paths to match yours):</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -tid --volume /media/mrueda/4TBT/data:/data --name convert-pheno-mount cnag/convert-pheno:latest
+</code></pre></div>
+<p>Then I will do something like this:</p>
+<div class="language-text highlight"><pre><span></span><code># First I create an alias to simplify invocation (from the host)
+alias convert-pheno=&#39;docker exec -ti convert-pheno-mount /usr/share/convert-pheno/bin/convert-pheno&#39;
+
+# Now I use the alias to run the command (note that I use the flag --out-dir to specify the output directory)
+convert-pheno -ibff /data/individuals.json -opxf pxf.json --out-dir /data
+</code></pre></div>
+<h3 id="system-requirements">System requirements<a class="headerlink" href="#system-requirements" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code>* Ideally a Debian-based distribution (Ubuntu or Mint), but any other (e.g., CentOs, OpenSuse, MacOS) should do as well.
+  (It should also work on macOS and Windows Server, but we are only providing information for Linux here)
+* Perl 5 (&gt;= 5.26 core; installed by default in most Linux distributions). Check the version with &quot;perl -v&quot;.
+* &gt;= 4GB of RAM
+* 1 core
+* At least 16GB HDD
+</code></pre></div>
+<h1 id="how-to-run-convert-pheno">HOW TO RUN CONVERT-PHENO<a class="headerlink" href="#how-to-run-convert-pheno" title="Permanent link">&para;</a></h1>
+<p>For executing convert-pheno you will need:</p>
+<ul>
+<li>
+<p>Input file(s):</p>
+<p>A text file in one of the accepted formats. With <code>--iomop</code> I/O files can be gzipped.</p>
+</li>
+<li>
+<p>Optional: </p>
+<p>Athena-OHDSI database</p>
+<p>The database file is available at this <a href="https://drive.google.com/drive/folders/1-5Ywf-hhwb8bX1sRNV2Tf3EjH4TCaC8P?usp=sharing">link</a> (~2.2GB). The database may be needed when using <code>-iomop</code>.</p>
+<p>Regardless if you're using the containerized or non-containerized version, the download procedure is the same. For CLI users, Google makes it difficult to use <code>wget</code>, <code>curl</code> or <code>aria2c</code> so we will use a <code>Python</code> module instead:</p>
+<div class="language-text highlight"><pre><span></span><code>$ pip install gdown
+</code></pre></div>
+<p>And then run the following script</p>
+<div class="language-text highlight"><pre><span></span><code>import gdown
+
+url = &#39;https://drive.google.com/uc?export=download&amp;id=1-Ls1nmgxp-iW-8LkRIuNNdNytXa8kgNw&#39;
+output = &#39;./ohdsi.db&#39;
+gdown.download(url, output, quiet=False)
+</code></pre></div>
+<p>Once downloaded, you have two options:</p>
+<p>a) Move the file <code>ohdsi.db</code> inside the <code>share/db/</code> directory.</p>
+<p>or</p>
+<p>b) Use the option <code>--path-to-ohdsi-db</code></p>
+</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<div class="language-text highlight"><pre><span></span><code>$ bin/convert-pheno -ipxf phenopackets.json -obff individuals.json
+
+$ $path/convert-pheno -ibff individuals.json -opxf phenopackets.yaml --out-dir my_out_dir
+
+$ $path/convert-pheno -iredcap redcap.csv -opxf phenopackets.json --redcap-dictionary redcap_dict.csv --mapping-file mapping_file.yaml
+
+$ $path/convert-pheno -iomop dump.sql -obff individuals.json
+
+$ $path/convert-pheno -iomop dump.sql.gz -obff individuals.json.gz --stream -omop-tables measurement -verbose
+
+$ $path/convert-pheno -cdisc cdisc_odm.xml -obff individuals.json --rcd redcap_dict.csv --mapping-file mapping_file.yaml --search mixed --min-text-similarity-score 0.6
+
+$ $path/convert-pheno -iomop *csv -obff individuals.json -sep &#39;,&#39;
+
+$ carton exec -- $path/convert-pheno -ibff individuals.json -opxf phenopackets.json # If using Carton
+</code></pre></div>
+<h2 id="common-errors-and-solutions">COMMON ERRORS AND SOLUTIONS<a class="headerlink" href="#common-errors-and-solutions" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code>* Error message: CSV_XS ERROR: 2023 - EIQ - QUO character not allowed @ rec 1 pos 21 field 1
+  Solution: Make sure you use the right character separator for your data with --sep &lt;char&gt;. 
+            The script tries to guess it from the file extension, but sometimes extension and actual separator do not match. 
+            When using REDCap as input, make sure that &lt;--iredcap&gt; and &lt;--rcd&gt; files use the same separator field.
+            The defauly value for the separator is &#39;;&#39;. 
+  Example for tab separator in CLI.
+   --sep  $&#39;\t&#39;
+
+* Error message: Foo
+  Solution: Bar
+</code></pre></div>
+<h1 id="citation">CITATION<a class="headerlink" href="#citation" title="Permanent link">&para;</a></h1>
+<p>The author requests that any published work that utilizes <code>Convert-Pheno</code> includes a cite to the the following reference:</p>
+<p>Rueda, M et al., (2024). Convert-Pheno: A software toolkit for the interconversion of standard data models for phenotypic data. Journal of Biomedical Informatics. <a href="https://doi.org/10.1016/j.jbi.2023.104558">DOI</a></p>
+<h1 id="author">AUTHOR<a class="headerlink" href="#author" title="Permanent link">&para;</a></h1>
+<p>Written by Manuel Rueda, PhD. Info about CNAG can be found at <a href="https://www.cnag.eu">https://www.cnag.eu</a>.</p>
+<h1 id="copyright-and-license">COPYRIGHT AND LICENSE<a class="headerlink" href="#copyright-and-license" title="Permanent link">&para;</a></h1>
+<p>Copyright (C) 2022-2024, Manuel Rueda - CNAG.</p>
+<p>This program is free software, you can redistribute it and/or modify it under the terms of the <a href="https://metacpan.org/pod/perlartistic">Artistic License version 2.0</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; Copyright 2022-2025, Manuel Rueda, CNAG
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/mrueda" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.select", "content.code.copy", "content.tabs.link", "search.highlight", "search.share", "navigation.tracking", "navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../js/theme_overrides.js"></script>
+      
+    
+  </body>
+</html>

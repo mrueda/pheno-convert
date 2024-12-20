@@ -1,0 +1,26 @@
+.md-header__source {
+    background-image: url("../img/cnag-logo-white.png");
+    background-size: 50px 15px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+h2 {
+    color: #2980B9;
+    border-top:  #2980B9 thin solid;
+    border-bottom:  #2980B9 thin solid;
+}
+
+h3 {
+    color: #888;
+    text-decoration: underline;
+}
+
+.mermaid {
+    text-align: center;
+}
+
+.mermaid svg {
+    margin: auto;
+    display: block;
+}
